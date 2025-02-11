@@ -58,4 +58,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return emp;
 	}
 
+	@Override
+	public String deleteById(Long id) {
+		repo.deleteById(id);
+		return "deleted success!";
+	}
+
 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,5 +46,11 @@ public class EmployeeController {
 		Employees res= e1.getOneEmployee(id);
 		
 		return res;
+	}
+	
+	@DeleteMapping("/delete")
+	public String deleteById(@RequestParam Long id) {
+		
+		return e1.deleteById(id);
 	}
 }
